@@ -1,0 +1,3 @@
+* Ištaisyta strigtis naujausiose „Android“ versijose
+
+* Pridėti vertimai: Baskų, Persų, Indoneziečių, Portugalijos portugalų, Ukrainiečių

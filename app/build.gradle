@@ -1,0 +1,89 @@
+apply plugin: 'com.android.application'
+
+/* set the versionCode based on how many commits in the repo */
+def getVersionCode = { ->
+    try {
+        def stdout = new ByteArrayOutputStream()
+        exec {
+            commandLine 'git', 'rev-list', '--first-parent', '--count', 'HEAD'
+            standardOutput = stdout
+        }
+        return Integer.parseInt(stdout.toString().trim())
+    }
+    catch (ignored) {
+        return -1;
+    }
+}
+
+/* gets the version name from the latest Git tag */
+def getVersionName = { ->
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'describe', '--tags', '--always'
+        standardOutput = stdout
+    }
+    return stdout.toString().trim()
+}
+
+android {
+    compileSdk 34
+    buildToolsVersion "34.0.0"
+
+    aaptOptions {
+        cruncherEnabled = false
+    }
+
+    defaultConfig {
+        namespace "info.guardianproject.ripple"
+        applicationId "info.guardianproject.ripple"
+        minSdkVersion 14
+        targetSdkVersion 34
+        versionCode getVersionCode()
+        versionName getVersionName()
+        archivesBaseName = "Ripple-$versionName"
+    }
+
+    // ✅ Signing: compatible with your GitHub Actions (ANDROID_KEYSTORE_* secrets)
+    signingConfigs {
+        release {
+            // Prefer CI-provided keystore path; fallback to repo-local keystore
+            def ksPath = System.getenv("ANDROID_KEYSTORE_PATH") ?: "${rootDir}/keystore/release.jks"
+            storeFile file(ksPath)
+
+            storePassword System.getenv("ANDROID_KEYSTORE_PASSWORD") ?: ""
+            keyAlias System.getenv("ANDROID_KEY_ALIAS") ?: ""
+            keyPassword System.getenv("ANDROID_KEY_PASSWORD") ?: ""
+        }
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+        }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError true
+
+        htmlReport true
+        xmlReport false
+        textReport false
+
+        lintConfig file("lint.xml")
+    }
+}
+
+dependencies {
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
+    implementation 'info.guardianproject.panic:panic:1.0'
+}

@@ -1,0 +1,3 @@
+* Perbaikan kemogokan pada versi Android terkini
+
+* Terjemahan ditambahkan: Basque, Persia, Indonesia, Portugis Portugal, Ukraina

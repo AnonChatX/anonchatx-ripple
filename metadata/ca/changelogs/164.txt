@@ -1,0 +1,3 @@
+* Corregida una fallada en versions d'Android recents
+
+* Traduccions afegides: Basc, persa, indonesi, portuguès de Portugal, ucraïnès

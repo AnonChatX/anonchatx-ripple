@@ -1,0 +1,26 @@
+El Ripple és un «botó del pànic» que pot enviar el seu missatge d'activació a qualsevol aplicació que sigui un «contestador de pànic». Aquestes aplicacions poden fer coses com ara blocar, disfressar-se, eliminar dades privades, enviar un missatge d'emergència i molt més. Està pensat per a situacions en les quals hi ha temps per a reaccionar, però que els usuaris necessiten assegurar-se que no es desencadena per error.
+
+Això és una versió BETA d'aquesta aplicació! Ara estem treballant per afegir compatibilitat amb tantes altres aplicacions com sigui possible. ChatSecure, Orweb, Umbrella i Zom ja hi són compatibles, i aquestes aplicacions arribaran aviat: Courier, PanicButton, OpenKeychain, Orfox, SMSSecure, StoryMaker.
+
+Aquests són dos exemples d'escenaris:
+
+* Una organització pateix batudes amb regularitat per part de les forces de seguretat, que registren tots els ordinadors i dispositius mòbils a les instal·lacions. L'organització normalment té almenys un minut o dos per a avisar abans que comenci la batuda. Necessiten una manera molt fiable d'activar l'esborrament de totes les dades de les aplicacions compromeses.
+
+* Un cooperant disposa de moltes dades confidencials sobre certes persones al seu dispositiu. Sincronitzen aquestes dades regularment amb una base de dades central segura. De tant en tant, el cooperant ha d'abandonar el país amb molt poca antelació. Els guàrdies fronterers baixen habitualment tot el contingut dels dispositius mòbils de les persones que travessen. Mentre espera a la cua en la frontera, el cooperant veu els guàrdies de frontera confiscant els dispositius de la gent, i de colp recorda totes les dades del dispositiu, de manera que desbloca el telèfon i prem el botó d'esborrament, que buida totes les aplicacions compromeses del dispositiu. Quan el cooperant torna a l'oficina central, el dispositiu torna a sincronitzar-se amb la base de dades central.
+
+Aquest projecte es va iniciar com a part del treball T2 Panic. Llegiu més sobre això aquí:
+https://guardianproject.info/tag/panic
+
+No veieu la vostra llengua? Uniu-vos a nosaltres i ajudeu a traduir l'aplicació:
+https://hosted.weblate.org/projects/guardianproject/ripple/
+https://hosted.weblate.org/projects/guardianproject/ripple-metadata/
+
+
+***Més informació***
+
+★ QUANT A NOSALTRES: El Guardian Project és un grup de desenvolupadors que fan aplicacions mòbils segures i codi obert per a un demà millor
+★ LA NOSTRA WEB: https://GuardianProject.info
+★ A TWITTER: https://twitter.com/guardianproject
+★ PROGRAMARI LLIURE: El Ripple és programari lliure. Podeu donar un cop d'ull al nostre codi font, o contribuir a fer que el Ripple sigui encara millor:
+https://github.com/guardianproject/ripple
+★ ENVIEU-NOS MISSATGES: Trobeu a faltar la vostra característica preferida? Heu trobat un error molest? Aviseu-nos! Envieu-nos un correu electrònic: support@guardianproject.info o trobeu-nos a la nostra sala de xat https://guardianproject.info/contact
